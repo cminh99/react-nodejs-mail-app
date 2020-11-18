@@ -21,6 +21,7 @@ function App() {
 
     if (name === '' && email === '') {
       setText('⚠ Please enter your name and email');
+      return;
     }
 
     const dataToSubmit = { name, email };
