@@ -2,6 +2,8 @@ require('dotenv').config();
 
 const express = require('express');
 const sendEmail = require('./mail');
+
+const port = 3001;
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -13,5 +15,4 @@ app.post('/api/mail', (req, res, next) => {
   sendEmail(name, email);
 });
 
-const port = 3001;
 app.listen(port, () => console.log(`Server running on port ${port}`));
